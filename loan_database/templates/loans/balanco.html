@@ -1,0 +1,16 @@
+{% extends 'loans/base.html' %}
+{% block conteudo %}
+<h1 style='margin-top:200px; margin-bottom: 80px; text-align: center;'>Balanço Clientes<h1>
+    <div class="container-fluid">
+    <table class='container table table-hover table-bordered table-sm'> 
+        <tr>   
+            <th>Valor Total de Empréstimos Realizados</th> 
+            <th>Valor Total de Mensalidades</th> 
+        </tr>
+        <tr>
+            <td style="text-align: center;">{{ soma_valor.valor__sum }}</td>
+            <td style="text-align: center;">{{ soma_pagamento.juros_mes__sum }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

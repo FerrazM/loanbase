@@ -1,0 +1,11 @@
+{% extends 'loans/base.html' %}
+{% block conteudo %}
+<div class="container">
+    <form method='POST'>
+        {% csrf_token %}
+        <h1 style="margin-top: 200px; text-align: center;"> Confirmar exclusão do cliente?</h1>
+        <button class="btn btn-default"><a href="{% url 'clientes' %}">Cancelar</a></button>
+        <button class="btn btn-danger"type="submit">Confirmar</button>
+    </form>
+</div>
+{% endblock %}

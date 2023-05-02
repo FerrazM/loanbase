@@ -1,0 +1,75 @@
+{% extends 'loans/base.html' %}
+{% load static %}
+{% block conteudo %}
+<h1 class='container' style ='text-align: center; margin-bottom:50px;'>Lista de Clientes</h1>
+<div style= "white-space: nowrap;" class='container'>
+<table class= 'container table'>
+    <table class= 'container table table-striped table-bordered' id="tabela-clientes">
+        <thead>
+            <tr style="text-align: center;">
+                <th>Cliente</th>
+                <th>Dívida Total Paga</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+
+    <tbody>
+        {% for dado in dados %}
+        <tr style="text-align: center;">
+            <td><a href="{% url 'detalhe' dado.id %}">{{dado.nome}}</a></td>      
+            {% if dado.checkbox2 %}
+            <td style='text-align:center; background-color: green'><input  type='checkbox' id='checkbox2' checked disabled></td>
+            {% else %}
+            <td style='text-align:center; background-color: red'><input  type='checkbox' id='checkbox2' disabled></td>
+            {% endif %}
+            <td><button class = 'btn btn-warning'><a style = 'color: white;' href="{% url 'editar' dado.id %}">Editar</a></button></td>
+        </tr>
+        {% endfor %}
+    <tbody>
+</table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    
+    $(document).ready(function(){
+
+        $('#tabela-clientes').DataTable({
+            responsive: true,
+            // "bSort": false,
+            "aaSorting": [[0,"asc"]],
+            "pageLength": 50,
+            "language": {
+                "decimal": "",
+                "emptyTable": "",
+                "info": "",
+                "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                "infoFiltered": "",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "",
+                "loadingRecords": "A carregar dados...",
+                "processing": "A processar...",
+                "search": "Procurar:",
+                "zeroRecords": "",
+                "paginate": {
+                    "first": "Primeiro",
+                    "last": "Último",
+                    "next": "Seguinte",
+                    "previous": "Anterior"
+                },
+                "aria": {
+                    "sortAscending": ": ordem crescente",
+                    "sortDescending": ": ordem decrescente"
+                }
+            }
+        });
+            
+    });
+    
+        
+
+
+</script>
+{% endblock %}

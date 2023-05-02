@@ -1,0 +1,105 @@
+{% extends 'loans/base.html' %}
+{% block conteudo %}
+<h1 style='margin-top:100px; margin-bottom: 80px; text-align: center;'>Detalhes do Cliente<h1>
+<div class="container">
+    <table class='container-fluid table table-striped table-hover table-bordered'>
+        <thead>
+            <tr>
+                <tbody>
+                    <th>Nome</th> <td style= "white-space: nowrap;">{{dados.nome}}</td>
+                </tbody> 
+            </tr>
+            <tr>
+                <tbody>
+                    <th>CPF</th> <td style= "white-space: nowrap;">{{dados.cpf}}</td>
+                </tbody>
+            </tr>    
+            <tr>
+                <tbody>
+                    <th>Telefone</th> <td style= "white-space: nowrap;">{{dados.telefone}}</td>
+                </tbody>
+            </tr>    
+            <tr>
+                <tbody>
+                    <th>Endereço</th> <td>{{dados.endereco}}</td>
+                </tbody>
+            </tr>    
+            <tr>
+                <tbody>
+                    <th>Valor do Empréstimo</th> <td style= "white-space: nowrap;">{{dados.valor}}</td>
+                </tbody>
+            </tr>
+            <tr>
+                <tbody>
+                    <th>Juros %</th> <td style= "white-space: nowrap;">{{dados.juros}}</td>
+                </tbody>
+            </tr>    
+            <tr>
+                <tbody>
+                    <th>Parcelas</th> <td style= "white-space: nowrap;">{{dados.parcelas}}</td>
+                </tbody>
+            </tr>    
+            <tr>
+                <tbody>
+                    <th>Parcelas Pagas</th> <td style= "white-space: nowrap;">{{dados.parcelas_pagas}}</td>
+                </tbody>
+            </tr>
+            <tr>
+                <tbody>
+                    <th>Parcelas em Atraso</th> <td style= "white-space: nowrap;">{{dados.parcelas_atrasadas}}</td>
+                </tbody>
+            </tr>
+            <tr>
+                <tbody>
+                    <th>Valor Retornado</th> <td style= "white-space: nowrap;">{{valor_retornado}}</td>
+                </tbody>
+            </tr>    
+            <tr>
+                <tbody>
+                    <th>Pagamento Mensal %</th> <td style= "white-space: nowrap;">{{dados.juros_mes}}</td>
+                </tbody>
+            </tr>
+            <tr>
+                <tbody>
+                    <th>Data do Empréstimo</th> <td style= "white-space: nowrap;">{{dados.data_emprestimo|date:"d/m/Y"}}</td>
+                </tbody>
+            </tr>    
+            <tr>
+                <tbody>
+                    <th>Data de Vencimento</th>  <td style= "white-space: nowrap;">{{dados.vencimento_mensal|date:"d/m/Y"}}</td>
+                </tbody>
+            </tr>    
+            <tr>
+                <tbody>
+                    <th>Mensalidade Paga</th> {% if dados.checkbox1 %}
+                    <td style='text-align:center'><input  type='checkbox' value="checkbox1" checked disabled></td>
+                    {% else %}
+                    <td style='text-align:center'><input  type='checkbox' disabled value="checkbox1" ></td>
+                    {% endif %}
+                </tbody>  
+                <tbody>
+                    <th>Dívida Paga</th> {% if dados.checkbox2 %}
+                    <td style='text-align:center'><input  type='checkbox' value="checkbox2" checked disabled></td>
+                    {% else %}
+                    <td style='text-align:center'><input  type='checkbox' disabled value="checkbox2" ></td>
+                    {% endif %}
+                </tbody>          
+            </tr>
+            <tr>
+                <tbody>
+                    <th>Observações</th> <td style= "white-space: nowrap;">{{dados.observacao}}</td>
+                </tbody>
+            </tr>
+        </thead>
+    </table>
+</div>
+{% endblock %}
+
+
+            
+
+            
+            
+            
+            
+            

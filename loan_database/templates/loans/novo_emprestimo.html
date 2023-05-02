@@ -1,0 +1,45 @@
+{% extends 'loans/base.html' %}
+{% load static %}
+{% block conteudo %}
+
+{% load crispy_forms_tags %}
+<div class="container">
+    <h1 style='margin-top: 140px; margin-bottom: 30px;'>Formulário Novo Cliente</h1>
+    <form action="#" method="POST">
+        {% csrf_token %}
+        {{ formulario.usuario|as_crispy_field }}
+        {{ formulario.nome|as_crispy_field }}
+        {{ formulario.cpf|as_crispy_field }}
+        {{ formulario.telefone|as_crispy_field }}
+        {{ formulario.endereco|as_crispy_field }}
+        {{ formulario.valor|as_crispy_field }}
+        {{ formulario.juros|as_crispy_field }}
+        {{ formulario.juros_mes|as_crispy_field }}
+        {{ formulario.parcelas|as_crispy_field }}
+        {{ formulario.parcelas_pagas|as_crispy_field }}
+        {{ formulario.parcelas_atrasadas|as_crispy_field }}
+        {{ formulario.data_emprestimo|as_crispy_field }}
+        {{ formulario.vencimento_mensal|as_crispy_field }}
+        {{ formulario.observacao|as_crispy_field }}
+        {{ formulario.checkbox1|as_crispy_field }}
+        {{ formulario.checkbox2|as_crispy_field }}
+        <button style="margin-bottom: 50px;"type="submit" class="btn btn-success">Salvar</button>
+    </form>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
+<script src="{% static 'js/jquery.mask.min.js' %}"></script>
+<script src="{% static 'js/mascara.js' %}"></script>
+<script src="{% static 'js/calculojuros.js' %}"></script>
+<script src="{% static 'js/vencimento_mensal_checkbox.js' %}"></script>
+{% endblock %}
+
+
+
+
+
+
+

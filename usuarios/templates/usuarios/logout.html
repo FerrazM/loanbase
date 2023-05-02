@@ -1,0 +1,11 @@
+{% extends 'loans/base.html' %}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+<div style="margin-top: 100px;" class="container">
+    <h1 style=" margin-top: 50px; text-align: center;">Você saiu do sistema</h1>
+    <form method='POST'>
+        {% csrf_token %}
+        <a style="margin-top: 50px;"class="btn btn-primary" href="{% url 'login' %}">Fazer login novamente</a>
+    </form>
+</div>
+{% endblock %}
