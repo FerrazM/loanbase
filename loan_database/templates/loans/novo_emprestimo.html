@@ -5,7 +5,7 @@
 {% load crispy_forms_tags %}
 <div class="container">
     <h1 style='margin-top: 140px; margin-bottom: 30px;'>Formulário Novo Cliente</h1>
-    <form action="#" method="POST">
+    <form class="formulario" action="#" method="POST">
         {% csrf_token %}
         {{ formulario.usuario|as_crispy_field }}
         {{ formulario.nome|as_crispy_field }}
@@ -23,7 +23,7 @@
         {{ formulario.observacao|as_crispy_field }}
         {{ formulario.checkbox1|as_crispy_field }}
         {{ formulario.checkbox2|as_crispy_field }}
-        <button style="margin-bottom: 50px;"type="submit" class="btn btn-success">Salvar</button>
+        <button class="botao-salvar" style="margin-bottom: 50px;"type="submit" class="btn btn-success">Salvar</button>
     </form>
 </div>
 {% endblock %}

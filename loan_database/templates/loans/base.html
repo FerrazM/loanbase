@@ -4,32 +4,31 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, margin-right:50px; initial-scale=0.80, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width margin-left:50px ; initial-scale=0.80, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.13.1/datatables.min.css"/>
- 
+    <link rel="shortcut icon" type="image.png" href="{% static 'img/favicon.png' %}">
     <title>Loan Database</title>
   </head>
-  
-  <body>
-      <nav class="navbar-brand container-fluid ">
-        <a style="float:left;"class="navbar navbar-brand" href="{% url 'clientes' %}">Página Inicial</a>
+  <body class="container-fluid" style="margin-top:20px">
+      <nav class=""><a class="cabecalho" href="{% url 'clientes' %}">Página Inicial</a>
         <ul style="float:right; list-style: none;">
           {% if user.is_authenticated %}
           <li style="float:right">
-            <strong style="float:left" class="text-info nav-link">Bem-vindo: {{user.get_username}}</strong>
+            <strong class="bemvindo" style="float:left; " class="text-info nav-link">Bem-vindo: {{user.get_username}}</strong>
           </li>
           <li  style="float:right">
-              <a class= "nav-link" href="{% url 'logout' %}">Sair</a>
+              <a class="sair" class= "nav-link" href="{% url 'logout' %}">Sair</a>
           </li>
           {% else %}
           <li style="float:right">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
+              <a class="login" class="nav-link" href="{% url 'login' %}">Login</a>
           </li>
           <li style="float:right">      
-              <a class=" nav-link" href="{% url 'novo_usuario' %}">Fazer Cadastro</a>
+              <a class="fazer-cadastro" class=" nav-link" href="{% url 'novo_usuario' %}">Fazer Cadastro</a>
           </li>
           {% endif %}
         </ul>
@@ -43,7 +42,7 @@
         {% block conteudo %}
 
         {% endblock %}
-    
+
         <script src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
         <script src="{% static 'js/jquery.mask.min.js' %}"></script>
         <script src="{% static 'js/mascara.js' %}"></script>
